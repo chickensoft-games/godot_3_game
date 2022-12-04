@@ -1,0 +1,17 @@
+<Project Sdk="Godot.NET.Sdk/3.3.0">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MyGameName.Tests</RootNamespace>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <PackageReference Include="Chickensoft.GoDotTest" Version="1.0.0" />
+    <PackageReference Include="Shouldly" Version="4.1.0" />
+    <PackageReference Include="Moq" Version="4.18.2" />
+  </ItemGroup>
+</Project>

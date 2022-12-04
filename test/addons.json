@@ -1,0 +1,9 @@
+{
+  "path": ".",
+  "addons": {
+    "src": {
+      "url": "../src",
+      "source": "symlink"
+    }
+  }
+}
