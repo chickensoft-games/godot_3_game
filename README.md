@@ -1,17 +1,12 @@
 # 🤖 MyGame
 
-![line coverage][line-coverage] ![branch coverage][branch-coverage]
+[![Chickensoft Badge][chickensoft-badge]][chickensoft-website] [![Discord](https://img.shields.io/badge/Chickensoft%20Discord-%237289DA.svg?style=flat&logo=discord&logoColor=white)][discord] ![line coverage][line-coverage] ![branch coverage][branch-coverage] 
 
 A Godot 3 game for macOS, Windows, and Linux.
 
-## 😅 Hey! Where can I get help?
-
-[![Chickensoft Badge][chickensoft-badge]][chickensoft-website] [![Discord](https://img.shields.io/badge/Chickensoft%20Discord-%237289DA.svg?style=flat&logo=discord&logoColor=white)][discord] 
-
-It's no secret game development is really hard. You don't have to suffer alone! 
+## 💁 Getting Help
 
 *Is this template broken? Encountering obscure C# build problems?* Pop into our Discord and we'll be happy to help!
-
 
 ## 🏝 Environment Setup
 
@@ -21,7 +16,7 @@ For macOS, create a file named `.zshrc` in your user folder (if you don't have o
 
 On Linux, edit your `.zshrc`, `.bash_profile`, or `.bashrc` accordingly.
 
-On Windows, you can [create environment variables in the Windows Settings][windows-env].
+On Windows, you can [create environment variables in the Windows Settings][windows-env]. For the best experience, we recommend installing [Git][git-win] on Windows. Besides being the *de facto* version control system, it provides an easy to use bash environment for Windows known as "git bash." All of the shell commands used by Chickensoft are bash commands, so we recommend using bash as your default terminal profile. This template automatically enables the git bash terminal profile inside VSCode on Windows (see below).
 
 ```sh
 # Replace with the correct path on your system
@@ -32,6 +27,12 @@ export PATH="/Applications/Godot.app/Contents/MacOS:$PATH"
 ```
 
 > Note: you may have to logout and log back in before VSCode recognizes environment variables.
+
+### VSCode Settings
+
+This template includes some Visual Studio Code settings in `.vscode/settings.json`. The settings facilitate terminal environments on Windows (Git Bash, PowerShell, Command Prompt) and macOS (zsh), as well as fixing some syntax colorization issues that Omnisharp suffers from. You'll also find settings that enable editor config support in Omnisharp and the .NET Roslyn analyzers for a more enjoyable coding experience.
+
+> If you're an experienced VSCode user, please double-check that the provided settings don't conflict with anything you've previously setup.
 
 ### ⚙️ Additional Configuration
 
@@ -49,7 +50,7 @@ export PKG_CONFIG_PATH="/Library/Frameworks/Mono.framework/Versions/6.12.0/lib/p
 alias nugetclean="dotnet nuget locals --clear all"
 ```
 
-## 🕹 Debugging
+## 🐞 Debugging
 
 To debug your game, open the root of your project in [Visual Studio Code][vscode] and select the launch profile titled `Debug Game`.
 
@@ -115,3 +116,4 @@ You can install addons using [Chicken]. Chicken makes it easy to install Godot a
 [Chickensoft]: https://chickensoft.games
 [Chicken]: https://github.com/chickensoft-games/Chicken
 [GoDotTest]: https://github.com/chickensoft-games/go_dot_test
+[git-win]: https://git-scm.com/download/win
