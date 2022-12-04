@@ -1,0 +1,96 @@
+// Edit actions for use with Chicken
+// (https: //github.com/chickensoft-games/Chicken)
+//
+// Edit actions tell Chicken how to customize a freshly cloned repository.
+{
+  "inputs": [
+    {
+      "name": "title",
+      "type": "string",
+      "default": "My Game"
+    }
+  ],
+  "actions": [
+    // Edit game's .csproj file
+    {
+      // Find and replace text inside a file
+      "type": "edit",
+      "file": "MyGame.csproj",
+      "find": "MyGame",
+      "replace": "{title:PascalCase}"
+    },
+    {
+      // Rename file.
+      "type": "rename",
+      "file": "MyGame.csproj",
+      "to": "{title:PascalCase}.csproj"
+    },
+    // Edit game's visual studio solution file
+    {
+      // Replace each instance of the guid below with a new guid
+      "type": "guid",
+      "file": "MyGame.sln",
+      "replace": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "type": "guid",
+      "file": "MyGame.sln",
+      "replace": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "file": "MyGame.sln",
+      "find": "MyGame",
+      "replace": "{title:PascalCase}"
+    },
+    {
+      "type": "rename",
+      "file": "MyGame.sln",
+      "to": "{title:PascalCase}.sln"
+    },
+    // Edit game's project.godot file
+    {
+      "type": "edit",
+      "file": "project.godot",
+      "find": "MyGame",
+      "replace": "{title}"
+    },
+    {
+      "type": "edit",
+      "file": "project.godot",
+      "find": "MyAssembly",
+      "replace": "{title:PascalCase}"
+    },
+    // Edit README.md
+    {
+      "type": "edit",
+      "file": "README.md",
+      "find": "MyGame.csproj",
+      "replace": "{title:PascalCase}.csproj"
+    },
+    {
+      "type": "edit",
+      "file": "README.md",
+      "find": "MyGame",
+      "replace": "{title}"
+    },
+    // Edit test project .csproj file
+    {
+      "type": "edit",
+      "file": "test/MyGame.Tests.csproj",
+      "find": "MyGame.Tests",
+      "replace": "{title:PascalCase}.Tests"
+    },
+    {
+      "type": "rename",
+      "file": "test/MyGame.Tests.csproj",
+      "to": "test/{title:PascalCase}.Tests.csproj"
+    },
+    // Edit test project project.godot file
+    {
+      "type": "edit",
+      "file": "test/project.godot",
+      "find": "MyGame.Tests",
+      "replace": "{title:PascalCase}.Tests"
+    }
+  ]
+}
