@@ -74,25 +74,6 @@
       "find": "MyGame",
       "replace": "{title}"
     },
-    // Edit test project .csproj file
-    {
-      "type": "edit",
-      "file": "test/MyGame.Tests.csproj",
-      "find": "MyGame.Tests",
-      "replace": "{title:PascalCase}.Tests"
-    },
-    {
-      "type": "rename",
-      "file": "test/MyGame.Tests.csproj",
-      "to": "test/{title:PascalCase}.Tests.csproj"
-    },
-    // Edit test project project.godot file
-    {
-      "type": "edit",
-      "file": "test/project.godot",
-      "find": "MyGame.Tests",
-      "replace": "{title:PascalCase}.Tests"
-    },
     // Edit test/ExampleTest.cs
     {
       "type": "edit",
