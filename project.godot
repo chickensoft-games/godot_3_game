@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="MyGameName"
+config/name="MyGame"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
@@ -21,7 +21,7 @@ theme/use_hidpi=true
 
 [mono]
 
-project/assembly_name="MyGameName"
+project/assembly_name="MyGame"
 
 [network]
 

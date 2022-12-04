@@ -1,4 +1,4 @@
-# 🤖 MyGameName
+# 🤖 MyGame
 
 ![line coverage][line-coverage] ![branch coverage][branch-coverage]
 
@@ -55,21 +55,18 @@ To debug your game, open the root of your project in [Visual Studio Code][vscode
 
 The launch profile titled `Debug Current Scene` allows you to debug the current scene for the C# script file you have open.
 
-> Important: To debug the scene for your currently open C# file, the scene and the script **have to be in the same folder and share the same name**: e.g.,  `src/Main.cs` is selected in VSCode and the scene is located at `src/Main.tscn`)
+> Important: To debug the scene for your currently open C# file, the scene and the script **have to be in the same folder and share the same name**: e.g.,  `game/Game.cs` is selected in VSCode and the scene is located at `game/Game.tscn`)
 
 ## 👷 Testing
 
-A test project is included which runs tests inside Godot using [GoDotTest].
+By default, [GoDotTest] is included in debug builds (but not in release builds) so that you can benefit from automated testing in your game or application.
 
-Because of quirks with Visual Studio Code, you should open the `test/` subdirectory as the main folder in VSCode when writing tests, and add your game folder above it to the workspace to access your source code. While working inside the `test/` folder, you can then use the launch configurations provided in `test/.vscode/launch.json` to debug all tests or debug the current test.
+The project is configured to allow tests to be easily run and debugged from VSCode or executed via CI/CD workflows, without having to include the test files or test dependencies in the final release build.
 
-The test project is excluded from the main game project in `MyGameNameName.csproj`, since test files should not be in the final build.
+The `Main.tscn` and `Main.cs` scene and script file are the entry point of your game. In general, you probably won't need to modify these unless you're doing something highly custom. If the game isn't running in test mode (or it's a release build), it will just immediately change the scene to `game/Game.tscn`. In general, prefer editing `game/Game.tscn` over `Main.tscn`.
+If you run Godot with the `--run-tests` command line argument, the game will run the tests instead of switching to the game scene located at `game/Game.tscn`. The provided debug configurations in `.vscode/launch.json` allow you to easily debug tests (or just the currently open test, provided its filename matches its classname).
 
-### 🎭 Testing Scenes
-
-To include scene files from the game in the test project, the test project uses [Chicken] to setup symlinks so that all of the scenes nested inside the game's `src/` directory appear in the `src/` directory of the test project. While a bit confusing, this process allows you to reference your game's scenes (without breaking resource paths) as well as your game's code to further automate your testing.
-
-> Important: if you intend to write tests for your game's scenes, all of your scenes (and any assets and scripts those scenes depend on) should be in the top level `src/` directory of your project so they can be brought into the test project without breaking `res://` resource paths.
+Please see `test/ExampleTest.cs` and the [GoDotTest] readme for more examples. 
 
 ### 🚦 Test Coverage
 
@@ -95,6 +92,8 @@ cd test
 ./coverage.sh
 ```
 
+You can also run test coverage through VSCode by opening the command palette and selecting `Tasks: Run Task` and then choosing `coverage`.
+
 ## 🔌 Installing Addons
 
 You can install addons using [Chicken]. Chicken makes it easy to install Godot addons from git urls's, local paths, and even as symlinks (for when your addons are still in development).
@@ -104,8 +103,8 @@ You can install addons using [Chicken]. Chicken makes it easy to install Godot a
 🐤 *Project generated with [Chicken] — [Chickensoft's][Chickensoft] command line tool for game development with Godot and C#.*
 
 <!-- Coverage Badges at the top -->
-[line-coverage]: test/reports/line_coverage.svg
-[branch-coverage]: test/reports/branch_coverage.svg
+[line-coverage]: reports/line_coverage.svg
+[branch-coverage]: reports/branch_coverage.svg
 
 <!-- Links and Misc -->
 [chickensoft-badge]: https://chickensoft.games/images/chickensoft/chickensoft_badge.svg

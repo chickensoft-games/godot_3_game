@@ -38,6 +38,7 @@
       "replace": "00000000-0000-0000-0000-000000000001"
     },
     {
+      "type": "edit",
       "file": "MyGame.sln",
       "find": "MyGame",
       "replace": "{title:PascalCase}"
@@ -91,6 +92,20 @@
       "file": "test/project.godot",
       "find": "MyGame.Tests",
       "replace": "{title:PascalCase}.Tests"
+    },
+    // Edit test/ExampleTest.cs
+    {
+      "type": "edit",
+      "file": "test/ExampleTest.cs",
+      "find": "MyGame",
+      "replace": "{title:PascalCase}"
+    },
+    // Edit Main.cs
+    {
+      "type": "edit",
+      "file": "Main.cs",
+      "find": "MyGame",
+      "replace": "{title:PascalCase}"
     }
   ]
 }

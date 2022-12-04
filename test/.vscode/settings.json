@@ -1,9 +1,0 @@
-{
-  "omnisharp.enableEditorConfigSupport": true,
-  "omnisharp.enableImportCompletion": true,
-  "omnisharp.enableMsBuildLoadProjectsOnDemand": false,
-  "omnisharp.enableRoslynAnalyzers": true,
-  "omnisharp.maxFindSymbolsItems": 3000,
-  "omnisharp.organizeImportsOnFormat": true,
-  "omnisharp.useModernNet": true,
-}
