@@ -8,43 +8,6 @@
   // Here's a workaround for doc comment highlighting from
   // https://github.com/OmniSharp/omnisharp-vscode/issues/3816
   "editor.tokenColorCustomizations": {
-    "[*]": {
-      // Themes that don't include the word "Dark" or "Light" in them.
-      // These are some bold colors that show up well against most dark and
-      // light themes.
-      "textMateRules": [
-        {
-          "scope": "comment.documentation",
-          "settings": {
-            "foreground": "#0091ff"
-          }
-        },
-        {
-          "scope": "comment.documentation.attribute",
-          "settings": {
-            "foreground": "#8480ff"
-          }
-        },
-        {
-          "scope": "comment.documentation.cdata",
-          "settings": {
-            "foreground": "#0091ff"
-          }
-        },
-        {
-          "scope": "comment.documentation.delimiter",
-          "settings": {
-            "foreground": "#aa00ff"
-          }
-        },
-        {
-          "scope": "comment.documentation.name",
-          "settings": {
-            "foreground": "#ef0074"
-          }
-        }
-      ]
-    },
     "[*Dark*]": {
       // Themes that include the word "Dark" in them.
       "textMateRules": [
@@ -115,6 +78,45 @@
         }
       ]
     },
+    "[*]": {
+      // Themes that don't include the word "Dark" or "Light" in them.
+      // These are some bold colors that show up well against most dark and
+      // light themes.
+      //
+      // Change them to something that goes well with your preferred theme :)
+      "textMateRules": [
+        {
+          "scope": "comment.documentation",
+          "settings": {
+            "foreground": "#0091ff"
+          }
+        },
+        {
+          "scope": "comment.documentation.attribute",
+          "settings": {
+            "foreground": "#8480ff"
+          }
+        },
+        {
+          "scope": "comment.documentation.cdata",
+          "settings": {
+            "foreground": "#0091ff"
+          }
+        },
+        {
+          "scope": "comment.documentation.delimiter",
+          "settings": {
+            "foreground": "#aa00ff"
+          }
+        },
+        {
+          "scope": "comment.documentation.name",
+          "settings": {
+            "foreground": "#ef0074"
+          }
+        }
+      ]
+    }
   },
   "omnisharp.enableEditorConfigSupport": true,
   "omnisharp.enableImportCompletion": true,
@@ -122,5 +124,32 @@
   "omnisharp.enableRoslynAnalyzers": true,
   "omnisharp.maxFindSymbolsItems": 3000,
   "omnisharp.organizeImportsOnFormat": true,
-  "omnisharp.useModernNet": true
+  "omnisharp.useModernNet": true,
+  // Remove these if you're happy with your terminal profiles.
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.osx": {
+    "zsh (normal - me)": {
+      "args": [],
+      "icon": "terminal",
+      "path": "zsh"
+    }
+  },
+  "terminal.integrated.profiles.windows": {
+    "Command Prompt": {
+      "args": [],
+      "icon": "terminal-cmd",
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ]
+    },
+    "Git Bash": {
+      "icon": "terminal",
+      "source": "Git Bash"
+    },
+    "PowerShell": {
+      "icon": "terminal-powershell",
+      "source": "PowerShell"
+    }
+  }
 }
